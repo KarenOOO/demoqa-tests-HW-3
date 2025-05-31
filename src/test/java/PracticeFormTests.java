@@ -24,9 +24,15 @@ public class PracticeFormTests {
         $("#userEmail").setValue("1234@bk.ru");
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("9993434333");
-        $("#dateOfBirthInput")
-                .sendKeys(Keys.chord(Keys.CONTROL, "a"),
-                        "30 May 1998", Keys.ENTER);
+        $("#dateOfBirthInput").click();
+
+        $(".react-datepicker__month-select").selectOption("April");
+        $(".react-datepicker__year-select").selectOption("1998");
+        $$("div.react-datepicker__day").findBy(text("27")).click();
+//        $("#dateOfBirthInput")
+//                .sendKeys(Keys.chord(Keys.CONTROL, "a"),
+//                        "30 May 1998", Keys.ENTER);
+
         $("#subjectsInput").setValue("Maths").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#uploadPicture").uploadFromClasspath("FileForTests.jpg");
@@ -41,7 +47,7 @@ public class PracticeFormTests {
         $(".table-responsive").shouldHave(text("Student Email"), text("1234@bk.ru"));
         $(".table-responsive").shouldHave(text("Gender"), text("Male"));
         $(".table-responsive").shouldHave(text("Mobile"), text("9993434333"));
-        $(".table-responsive").shouldHave(text("Date of Birth"), text("30 May,1998"));
+        $(".table-responsive").shouldHave(text("Date of Birth"), text("27 April,1998"));
         $(".table-responsive").shouldHave(text("Subjects"), text("Maths"));
         $(".table-responsive").shouldHave(text("Hobbies"), text("Sports"));
         $(".table-responsive").shouldHave(text("Picture"), text("FileForTests.jpg"));

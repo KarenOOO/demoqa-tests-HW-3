@@ -34,9 +34,9 @@ public class PracticeFormTests {
         $("#uploadPicture").uploadFromClasspath("FileForTests.jpg");
         $("#currentAddress").setValue("Some street 1");
         $("#state").click();
-        $(byText("Uttar Pradesh")).click();
+        $("#state").$(byText("Uttar Pradesh")).click();
         $("#city").click();
-        $(byText("Lucknow")).click();
+        $("#city").$(byText("Lucknow")).click();
         $("#submit").click();
 
         $(".table-responsive").shouldHave(text("Student Name"), text("Иван Иванов"));

@@ -4,7 +4,7 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
-import pages.components.CheckResultComponent;
+import pages.components.CheckResultRegistrationComponent;
 
 public class PracticeFormTests {
 
@@ -17,7 +17,7 @@ public class PracticeFormTests {
 
     
     RegistrationPage registrationPage = new RegistrationPage();
-    CheckResultComponent checkResultRegistration = new CheckResultComponent();
+    CheckResultRegistrationComponent checkResultRegistration = new CheckResultRegistrationComponent();
 
     @Test
     void fillFullPracticeFormTest() {

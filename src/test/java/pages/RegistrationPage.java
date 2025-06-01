@@ -2,7 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
-import pages.components.CheckResultComponent;
+import pages.components.CheckResultRegistrationComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -26,7 +26,7 @@ public class RegistrationPage {
     ;
 
     CalendarComponent calendarComponent = new CalendarComponent();
-    CheckResultComponent checkResultComponent = new CheckResultComponent();
+    CheckResultRegistrationComponent checkResultRegistrationComponent = new CheckResultRegistrationComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");

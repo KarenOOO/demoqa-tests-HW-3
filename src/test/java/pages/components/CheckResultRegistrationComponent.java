@@ -6,19 +6,19 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
-public class CheckResultComponent {
+public class CheckResultRegistrationComponent {
 
     public static SelenideElement checkStudentRegistration = $(".table-responsive"),
             checkUserForm = $("#userForm");
 
-    public CheckResultComponent checkResult(String key, String value) {
+    public CheckResultRegistrationComponent checkResult(String key, String value) {
         checkStudentRegistration.$(byText(key)).parent()
                 .shouldHave(text(value));
 
         return this;
     }
 
-    public CheckResultComponent checkValidation() {
+    public CheckResultRegistrationComponent checkValidation() {
         checkUserForm.$(".was-validated");
 
         return this;

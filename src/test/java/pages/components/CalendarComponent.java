@@ -1,19 +1,24 @@
 package pages.components;
 
+import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import static com.codeborne.selenide.Condition.*;
 
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$$;
 
 public class CalendarComponent {
 
-    public static SelenideElement monthOfBirth = $(".react-datepicker__month-select"),
-            yearOfBirth = $(".react-datepicker__year-select"),
-            dayOfBirth = $(".react-datepicker__day--027:not(.react-datepicker__day--outside-month)")
+    private final SelenideElement monthOfBirth = $(".react-datepicker__month-select"),
+            yearOfBirth = $(".react-datepicker__year-select")
                     ;
 
+    private final ElementsCollection dayOfBirth =
+            $$( ".react-datepicker__day:not(.react-datepicker__day--outside-month)" );
+
     public void setDate(String day, String month, String year) {
-        monthOfBirth.selectOption("April");
-        yearOfBirth.selectOption("1998");
-        dayOfBirth.click();
+        monthOfBirth.selectOption(month);
+        yearOfBirth.selectOption(year);
+        dayOfBirth.findBy(exactText(day)).click();
     }
 }

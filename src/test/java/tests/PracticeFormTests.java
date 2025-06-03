@@ -15,7 +15,6 @@ public class PracticeFormTests {
         Configuration.pageLoadStrategy = "eager";
     }
 
-    
     RegistrationPage registrationPage = new RegistrationPage();
     CheckResultRegistrationComponent checkResultRegistration = new CheckResultRegistrationComponent();
 

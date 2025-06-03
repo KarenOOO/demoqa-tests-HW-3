@@ -2,13 +2,14 @@ package pages.components;
 
 import com.codeborne.selenide.SelenideElement;
 
+import static com.codeborne.selenide.Condition.cssClass;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CheckResultRegistrationComponent {
 
-    public static SelenideElement checkStudentRegistration = $(".table-responsive"),
+    private final SelenideElement checkStudentRegistration = $(".table-responsive"),
             checkUserForm = $("#userForm");
 
     public CheckResultRegistrationComponent checkResult(String key, String value) {
@@ -19,7 +20,7 @@ public class CheckResultRegistrationComponent {
     }
 
     public CheckResultRegistrationComponent checkValidation() {
-        checkUserForm.$(".was-validated");
+        checkUserForm.shouldHave(cssClass("was-validated"));
 
         return this;
     }

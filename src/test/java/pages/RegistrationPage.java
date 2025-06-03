@@ -2,7 +2,6 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
-import pages.components.CheckResultRegistrationComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -10,7 +9,7 @@ import static com.codeborne.selenide.Condition.text;
 
 public class RegistrationPage {
 
-    public static SelenideElement firstNameInput = $("#firstName"),
+    private final SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
             genderWrapper = $("#genterWrapper"),
@@ -26,7 +25,6 @@ public class RegistrationPage {
     ;
 
     CalendarComponent calendarComponent = new CalendarComponent();
-    CheckResultRegistrationComponent checkResultRegistrationComponent = new CheckResultRegistrationComponent();
 
     public RegistrationPage openPage() {
         open("/automation-practice-form");

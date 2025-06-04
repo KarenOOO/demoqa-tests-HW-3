@@ -1,19 +1,10 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.components.CheckResultRegistrationComponent;
 
-public class PracticeFormTests {
-
-    @BeforeAll
-    static void setUp() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "eager";
-    }
+public class PracticeFormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
     CheckResultRegistrationComponent checkResultRegistration = new CheckResultRegistrationComponent();

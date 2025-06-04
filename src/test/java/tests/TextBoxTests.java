@@ -1,19 +1,10 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.TextBoxPage;
 import pages.components.CheckResultTextBoxComponent;
 
-public class TextBoxTests {
-
-    @BeforeAll
-    static void setUp() {
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "eager";
-    }
+public class TextBoxTests extends TestBase {
 
     TextBoxPage textBoxPage = new TextBoxPage();
     CheckResultTextBoxComponent CheckResultTextBox = new CheckResultTextBoxComponent();

@@ -43,9 +43,7 @@ public class TextBoxPage {
         return this;
     }
 
-    public TextBoxPage setSubmit() {
+    public void setSubmit() {
         submitButton.click();
-
-        return this;
     }
 }

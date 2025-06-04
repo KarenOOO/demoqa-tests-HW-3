@@ -18,9 +18,7 @@ public class CheckResultRegistrationComponent {
         return this;
     }
 
-    public CheckResultRegistrationComponent checkValidation() {
+    public void checkValidation() {
         checkUserForm.shouldHave(cssClass("was-validated"));
-
-        return this;
     }
 }

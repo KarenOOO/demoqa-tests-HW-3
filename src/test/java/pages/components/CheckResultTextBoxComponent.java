@@ -31,9 +31,7 @@ public class CheckResultTextBoxComponent {
         return this;
     }
 
-    public CheckResultTextBoxComponent checkResultPermanentAddress(String value) {
+    public void checkResultPermanentAddress(String value) {
         permanentAddress.shouldHave(text (value));
-
-        return this;
     }
 }

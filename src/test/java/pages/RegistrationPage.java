@@ -110,9 +110,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setSubmit() {
+    public void setSubmit() {
         submitButton.click();
-
-        return this;
     }
 }

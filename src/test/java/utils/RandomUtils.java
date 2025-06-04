@@ -16,10 +16,10 @@ public class RandomUtils {
     static String[] Haryana = {"Karnal", "Panipat"};
     static String[] Rajasthan = {"Jaipur", "Jaiselmer"};
 
-    static Faker faker = new Faker();
+    final Faker faker = new Faker();
 
-    static Date randomDate = faker.date().birthday();
-    static LocalDate localDate = randomDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    final Date randomDate = faker.date().birthday();
+    final LocalDate localDate = randomDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
     public final String getFirstName = faker.name().firstName();
     public final String getLastName = faker.name().lastName();

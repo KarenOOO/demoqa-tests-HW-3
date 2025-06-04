@@ -51,7 +51,7 @@ public class PracticeFormFakerTests extends TestBase {
                 .setNumber(getNumber)
                 .setSubmit();
 
-        checkResultRegistration.checkResult(checkName, getFirstName + " " + getLastName)
+        checkResultRegistration.checkResult(checkName, getFullName)
                 .checkResult(checkGender, getGender)
                 .checkResult(checkMobile, getNumber)
                 ;

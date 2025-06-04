@@ -7,6 +7,7 @@ import java.util.*;
 
 public class RandomUtils {
 
+    static String[] img = {"FileForTests.jpg", "dog.jpg", "cat.jpg"};
     static String[] gender = {"Male", "Female", "Other"};
     static String[] subjects = {"Maths", "Economics", "Arts"};
     static String[] hobbies = {"Sports", "Reading", "Music"};
@@ -20,29 +21,31 @@ public class RandomUtils {
     static Date randomDate = faker.date().birthday();
     static LocalDate localDate = randomDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
-    public static String getFirstName = faker.name().firstName();
-    public static String getLastName = faker.name().lastName();
-    public static String getFullName = getFirstName + " " + getLastName;
+    public final String getFirstName = faker.name().firstName();
+    public final String getLastName = faker.name().lastName();
+    public final String getFullName = getFirstName + " " + getLastName;
 
-    public static String getEmail = faker.internet().emailAddress();
-    public static String getGender = faker.options().option(gender);
-    public static String getNumber = faker.numerify("##########");
-    public static String getCurrentAddress = faker.address().streetAddress();
-    public static String getSubjects = faker.options().option(subjects);
+    public final String getEmail = faker.internet().emailAddress();
+    public final String getGender = faker.options().option(gender);
+    public final String getNumber = faker.numerify("##########");
+    public final String getCurrentAddress = faker.address().streetAddress();
+    public final String getSubjects = faker.options().option(subjects);
 
-    public static String getYear = localDate.format(DateTimeFormatter.ofPattern("yyyy"));
-    public static String getMonth = localDate.format(DateTimeFormatter.ofPattern("MMMM", new Locale("en")));
-    public static String getDay = localDate.format(DateTimeFormatter.ofPattern("d"));
-    public static String getDateOfBirth = getDay + " " + getMonth + "," + getYear;
+    public final String getYear = localDate.format(DateTimeFormatter.ofPattern("yyyy"));
+    public final String getMonth = localDate.format(DateTimeFormatter.ofPattern("MMMM", new Locale("en")));
+    public final String getDay = localDate.format(DateTimeFormatter.ofPattern("d"));
+    public final String getDateOfBirth = getDay + " " + getMonth + "," + getYear;
 
-    public static String getHobbies = faker.options().option(hobbies);
+    public final String getHobbies = faker.options().option(hobbies);
+    public final String getImg = faker.options().option(img);
 
-    public static String getSelectState = List.of("NCR", "Uttar Pradesh", "Haryana", "Rajasthan")
-            .get(faker.random().nextInt(4));
-    static List<String> cities = getSelectState.equals("NCR") ? List.of(NCR) :
-            getSelectState.equals("Uttar Pradesh") ? List.of(UttarPradesh) :
-                    getSelectState.equals("Haryana") ? List.of(Haryana) :
-                            List.of(Rajasthan);
-    public static String getSelectCity = cities.get(faker.random().nextInt(cities.size()));
-    public static String getStateAndCity = getSelectState + " " + getSelectCity;
+    public final String getSelectState = faker.options().option("NCR", "Uttar Pradesh", "Haryana", "Rajasthan");
+    public final String getSelectCity = switch (getSelectState) {
+        case "NCR" -> faker.options().option(NCR);
+        case "Uttar Pradesh" -> faker.options().option(UttarPradesh);
+        case "Haryana" -> faker.options().option(Haryana);
+        case "Rajasthan" -> faker.options().option(Rajasthan);
+        default -> "Delhi";
+    };
+    public final String getStateAndCity = getSelectState + " " + getSelectCity;
 }

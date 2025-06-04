@@ -9,7 +9,6 @@ import static com.codeborne.selenide.Condition.text;
 
 public class RegistrationPage {
 
-    public static String apple = "FileForTests.jpg";
     public static String checkName = "Student Name";
     public static String checkEmail = "Student Email";
     public static String checkGender = "Gender";

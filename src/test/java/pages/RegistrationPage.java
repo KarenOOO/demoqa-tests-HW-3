@@ -9,17 +9,6 @@ import static com.codeborne.selenide.Condition.text;
 
 public class RegistrationPage {
 
-    public static String checkName = "Student Name";
-    public static String checkEmail = "Student Email";
-    public static String checkGender = "Gender";
-    public static String checkMobile = "Mobile";
-    public static String checkDateOfBirth = "Date of Birth";
-    public static String checkSubjects = "Subjects";
-    public static String checkHobbies = "Hobbies";
-    public static String checkPicture = "Picture";
-    public static String checkAddress = "Address";
-    public static String checkStateAndCity = "State and City";
-
     private final SelenideElement firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),

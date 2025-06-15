@@ -32,7 +32,7 @@ public class SearchBrowserTests {
     })
     @ParameterizedTest(name = "Выполняется поиск {0} должен отдавать не пустой результат")
     @Tag("BLOCKER")
-    void searchDuckduckgoElement(String searchQuery) {
+    void searchDuckduckgoElementTest(String searchQuery) {
         $("#searchbox_input").setValue(searchQuery).pressEnter();
         $$("[data-testid='mainline'] li[data-layout='organic']")
                 .shouldBe(sizeGreaterThan(0));
@@ -43,7 +43,7 @@ public class SearchBrowserTests {
             "Selenide, https://selenide.org"})
     @ParameterizedTest(name = "Выполняется поиск {0} должен найти {1}")
     @Tag("BLOCKER")
-    void linkSearchDuckduckgoElement(String searchQuery, String url) {
+    void linkSearchDuckduckgoElementTest(String searchQuery, String url) {
         $("#searchbox_input").setValue(searchQuery).pressEnter();
         $("[data-testid='mainline'] li[data-layout='organic']")
                 .shouldHave(text(url));
@@ -54,7 +54,7 @@ public class SearchBrowserTests {
     })
     @ParameterizedTest(name = "Выполняется поиск изображения {0} должен отдавать не пустой результат")
     @Tag("BLOCKER")
-    void searchDuckduckgoElementImg(String searchQuery) {
+    void searchDuckduckgoElementImgTest(String searchQuery) {
         $("#searchbox_input").setValue(searchQuery).pressEnter();
         $("[data-testid='duckbar']").$(byText("Изображения")).click();
         $$("[data-testid='zci-images']")
@@ -64,7 +64,7 @@ public class SearchBrowserTests {
     @MethodSource("searchQueries")
     @ParameterizedTest(name = "Поиск {0} должен давать результат")
     @Tag("BLOCKER")
-    void searchWithMethodSource(String searchQuery) {
+    void searchWithMethodSourceTest(String searchQuery) {
         $("#searchbox_input").setValue(searchQuery).pressEnter();
         $$("[data-testid='mainline'] li[data-layout='organic']")
                 .shouldBe(sizeGreaterThan(0));
@@ -78,7 +78,7 @@ public class SearchBrowserTests {
     @DisplayName("Выполняется поиск новостей про QA Guru должен отдавать не пустой результат")
     @Tag("LOW")
     @Test
-    void searchDuckduckgoElementNews() {
+    void searchDuckduckgoElementNewsTest() {
         $("#searchbox_input").setValue("QA Guru").pressEnter();
         $("[data-testid='duckbar']").$(byText("Новости")).click();
         $$("[data-testid='zci-images']")

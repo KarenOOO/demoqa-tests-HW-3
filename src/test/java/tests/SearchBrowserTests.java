@@ -4,7 +4,10 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.util.stream.Stream;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;
 import static com.codeborne.selenide.Condition.text;
@@ -58,6 +61,19 @@ public class SearchBrowserTests {
         $("[data-testid='duckbar']").$(byText("Изображения")).click();
         $$("[data-testid='zci-images']")
                 .shouldBe(sizeGreaterThan(0));
+    }
+
+    @MethodSource("searchQueries")
+    @ParameterizedTest(name = "Поиск {0} должен давать результат")
+    @Tag("BLOCKER")
+    void searchWithMethodSource(String searchQuery) {
+        $("#searchbox_input").setValue(searchQuery).pressEnter();
+        $$("[data-testid='mainline'] li[data-layout='organic']")
+                .shouldBe(sizeGreaterThan(0));
+    }
+
+    static Stream<String> searchQueries() {
+        return Stream.of("QA Guru", "Selenide", "JUnit 5");
     }
 
     @Disabled("Временно отключено до фикса бага")

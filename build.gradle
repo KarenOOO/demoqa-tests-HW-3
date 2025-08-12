@@ -26,8 +26,14 @@ tasks.withType(Test) {
     }
 }
 
-task BLOCKER_test(type: Test) {
+task web_test(type: Test) {
     useJUnitPlatform {
-        includeTags("BLOCKER")
+        includeTags("Web")
+    }
+}
+
+task negative_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("Negative")
     }
 }

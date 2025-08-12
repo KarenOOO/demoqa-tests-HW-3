@@ -1,6 +1,8 @@
 package tests;
 
+import com.codeborne.selenide.logevents.SelenideLogger;
 import data.TestData;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -19,6 +21,8 @@ public class PracticeFormFakerTests extends TestBase {
     @Tag("Web")
     @Test
     void fillFullPracticeFormTest() {
+
+        SelenideLogger.addListener("allure", new AllureSelenide());
 
         registrationPage.openPage()
                 .setFirstName(testData.firstName)

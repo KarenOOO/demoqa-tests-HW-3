@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import pages.components.CalendarComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
@@ -26,6 +27,7 @@ public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
+    @Step("Открываем страницу регистрации")
     public RegistrationPage openPage() {
         open("/automation-practice-form");
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
@@ -35,36 +37,42 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Заполняем поле имя")
     public RegistrationPage setFirstName(String value) {
         firstNameInput.setValue(value);
 
         return this;
     }
 
+    @Step("Заполняем поле фамилия")
     public RegistrationPage setLastName(String value) {
         lastNameInput.setValue(value);
 
         return this;
     }
 
+    @Step("Заполняем поле почта")
     public RegistrationPage setEmail(String value) {
         emailInput.setValue(value);
 
         return this;
     }
 
+    @Step("Указываем пол")
     public RegistrationPage setGender(String value) {
         genderWrapper.$(byText(value)).click();
 
         return this;
     }
 
+    @Step("Указываем номер телефона")
     public RegistrationPage setNumber(String value) {
         numberInput.setValue(value);
 
         return this;
     }
 
+    @Step("Заполняем дату рождения")
     public RegistrationPage setDateOfBirth(String day, String month, String year) {
         calendarInput.click();
         calendarComponent.setDate(day, month, year);
@@ -72,30 +80,35 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Заполняем поле хобби")
     public RegistrationPage setHobbies(String value) {
         hobbiesInput.$(byText(value)).click();
 
         return this;
     }
 
+    @Step("Загружаем изображение")
     public RegistrationPage setUploadPicture(String value) {
         uploadPicture.uploadFromClasspath(value);
 
         return this;
     }
 
+    @Step("Указываем любимый предмет")
     public RegistrationPage setSubjects(String value) {
         subjectsInput.setValue(value).pressEnter();
 
         return this;
     }
 
+    @Step("Заполняем поле адресс")
     public RegistrationPage setCurrentAddress(String value) {
         currentAddress.setValue(value);
 
         return this;
     }
 
+    @Step("Заполняем поле штат")
     public RegistrationPage setSelectState(String value) {
         selectState.click();
         selectState.$(byText(value)).click();
@@ -103,6 +116,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Выбираем город")
     public RegistrationPage setSelectCity(String value) {
         selectCity.click();
         selectCity.$(byText(value)).click();
@@ -110,6 +124,7 @@ public class RegistrationPage {
         return this;
     }
 
+    @Step("Отправляем анкету")
     public void setSubmit() {
         submitButton.click();
     }

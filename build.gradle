@@ -32,8 +32,8 @@ task web_test(type: Test) {
     }
 }
 
-task negative_test(type: Test) {
-    useJUnitPlatform {
-        includeTags("Negative")
-    }
-}
+//task negative_test(type: Test) {
+//    useJUnitPlatform {
+//        includeTags("Negative")
+//    }
+//}

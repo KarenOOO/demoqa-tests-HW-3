@@ -21,12 +21,12 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.of(
-                "enableVNC", true,
-            "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability("selenoid:options", Map.of(
+//                "enableVNC", true,
+//            "enableVideo", true
+//        ));
+//        Configuration.browserCapabilities = capabilities;
 
     }
 

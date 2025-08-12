@@ -1,6 +1,8 @@
 package tests;
 
 import data.TestData;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.components.CheckResultRegistrationComponent;
@@ -13,7 +15,8 @@ public class PracticeFormFakerTests extends TestBase {
     CheckResultRegistrationComponent checkResultRegistration = new CheckResultRegistrationComponent();
     TestData testData = new TestData();
 
-
+    @DisplayName("Регистрация с заполнением всех полей")
+    @Tag("Web")
     @Test
     void fillFullPracticeFormTest() {
 
@@ -44,6 +47,8 @@ public class PracticeFormFakerTests extends TestBase {
                 .checkResult(checkStateAndCity, testData.stateAndCity);
     }
 
+    @DisplayName("Регистрация с заполнением обязательных полей")
+    @Tag("Web")
     @Test
     void fillMinimumPracticeFormTest() {
         registrationPage.openPage()
@@ -59,6 +64,8 @@ public class PracticeFormFakerTests extends TestBase {
                 ;
     }
 
+    @DisplayName("Попытка регистрации с пустыми полями")
+    @Tag("Negative")
     @Test
     void fillPracticeFormNegTest() {
         registrationPage.openPage()

@@ -47,12 +47,7 @@ tasks.withType(Test) {
 
 task web_test(type: Test) {
     useJUnitPlatform {
-        includeTags("Web","Negative")
+        includeTags("Web")
     }
 }
 
-//task negative_test(type: Test) {
-//    useJUnitPlatform {
-//        includeTags("Negative")
-//    }
-//}

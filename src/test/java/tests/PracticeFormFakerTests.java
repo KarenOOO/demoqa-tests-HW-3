@@ -69,7 +69,7 @@ public class PracticeFormFakerTests extends TestBase {
     }
 
     @DisplayName("Попытка регистрации с пустыми полями")
-    @Tag("Negative")
+    @Tag("Web")
     @Test
     void fillPracticeFormNegTest() {
         registrationPage.openPage()

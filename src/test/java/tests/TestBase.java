@@ -7,8 +7,8 @@ public class TestBase {
 
     @BeforeAll
     static void setUp() {
-        String headless = System.getProperty("selenide.headless", "false");
-        Configuration.headless = Boolean.parseBoolean(headless);
+
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/session";
         Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";

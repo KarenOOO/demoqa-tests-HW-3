@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import pages.components.CalendarComponent;
 
+import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.Condition.text;
@@ -28,13 +29,13 @@ public class RegistrationPage {
     CalendarComponent calendarComponent = new CalendarComponent();
 
     @Step("Открываем страницу регистрации")
-    public RegistrationPage openPage() {
-        open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+    public static RegistrationPage openPage() {
+        open("automation-practice-form");
+//        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
+//        executeJavaScript("$('#fixedban').remove()");
+//        executeJavaScript("$('footer').remove()");
 
-        return this;
+        return new RegistrationPage();
     }
 
     @Step("Заполняем поле имя")

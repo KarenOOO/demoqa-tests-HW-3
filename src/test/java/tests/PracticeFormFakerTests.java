@@ -2,7 +2,9 @@ package tests;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import data.TestData;
+import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -11,22 +13,32 @@ import pages.components.CheckResultRegistrationComponent;
 
 import static data.TestData.*;
 
+@Epic("Demoqa")
+@Feature("Header")
+@Story("Регестрация")
+@Owner("medina")
+@Severity(SeverityLevel.NORMAL)
+
 @DisplayName("Форма регистрации — тесты")
 public class PracticeFormFakerTests extends TestBase {
 
-    RegistrationPage registrationPage = new RegistrationPage();
-    CheckResultRegistrationComponent checkResultRegistration = new CheckResultRegistrationComponent();
-    TestData testData = new TestData();
+    private RegistrationPage registrationPage;
+    private CheckResultRegistrationComponent checkResultRegistration;
+    private TestData testData;
+
+    @BeforeEach
+    public void setUp() {
+        registrationPage = RegistrationPage.openPage();
+        testData = new TestData();
+        checkResultRegistration = new CheckResultRegistrationComponent();
+    }
 
     @DisplayName("Регистрация с заполнением всех полей")
     @Tag("Web")
     @Test
     void fillFullPracticeFormTest() {
 
-        SelenideLogger.addListener("allure", new AllureSelenide());
-
-        registrationPage.openPage()
-                .setFirstName(testData.firstName)
+        registrationPage.setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.email)
                 .setGender(testData.gender)
@@ -56,7 +68,7 @@ public class PracticeFormFakerTests extends TestBase {
     @Tag("Web")
     @Test
     void fillMinimumPracticeFormTest() {
-        registrationPage.openPage()
+        registrationPage
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setGender(testData.gender)
@@ -73,7 +85,7 @@ public class PracticeFormFakerTests extends TestBase {
     @Tag("Web")
     @Test
     void fillPracticeFormNegTest() {
-        registrationPage.openPage()
+        registrationPage
                 .setFirstName("")
                 .setLastName("")
                 .setEmail("1234")

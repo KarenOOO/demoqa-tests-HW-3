@@ -1,30 +1,32 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import config.ConfigReader;
+import config.ProjectConfiguration;
+import config.WebConfig;
 import helpers.WebAttach;
+import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.openqa.selenium.remote.DesiredCapabilities;
+import org.junit.jupiter.api.BeforeEach;
+import pages.RegistrationPage;
 
-import java.util.Map;
 
 public class TestBase {
+    public RegistrationPage registrationPage;
+    private static final WebConfig webConfig = ConfigReader.Instance.read();
 
     @BeforeAll
-    static void setUp() {
+    static void beforeAll() {
+        ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);
+        projectConfiguration.webConfig();
+    }
 
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        Configuration.browserSize = "1920x1080";
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.pageLoadStrategy = "eager";
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.of(
-                "enableVNC", true,
-            "enableVideo", true
-        ));
-        Configuration.browserCapabilities = capabilities;
-
+    @BeforeEach
+    void setUpEachTest() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        //registrationPage = RegistrationPage.openPage();
     }
 
     @AfterEach
@@ -33,5 +35,6 @@ public class TestBase {
         WebAttach.pageSource();
         WebAttach.browserConsoleLogs();
         WebAttach.addVideo();
+        Selenide.closeWebDriver();
     }
 }

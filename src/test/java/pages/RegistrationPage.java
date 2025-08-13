@@ -4,10 +4,8 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import pages.components.CalendarComponent;
 
-import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.text;
 
 public class RegistrationPage {
 
@@ -28,7 +26,7 @@ public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
 
-    @Step("Открываем страницу регистрации")
+    @Step("Переходим на форму регистрации студента")
     public static RegistrationPage openPage() {
         open("automation-practice-form");
 

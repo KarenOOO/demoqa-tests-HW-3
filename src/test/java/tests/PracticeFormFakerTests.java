@@ -24,14 +24,6 @@ public class PracticeFormFakerTests extends TestBase {
     private CheckResultRegistrationComponent checkResultRegistration;
     private TestData testData;
 
-    @DisplayName("Открываем страницу https://demoqa.com")
-    @BeforeEach
-    public void setUp() {
-        registrationPage = RegistrationPage.openPage();
-        testData = new TestData();
-        checkResultRegistration = new CheckResultRegistrationComponent();
-    }
-
     @Test
     @Tag("Web")
     @Story("Позитивный тест")

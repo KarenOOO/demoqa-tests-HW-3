@@ -11,6 +11,7 @@ import pages.components.CheckResultRegistrationComponent;
 
 import static data.TestData.*;
 
+@DisplayName("Форма регистрации — тесты")
 public class PracticeFormFakerTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();

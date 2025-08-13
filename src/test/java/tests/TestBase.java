@@ -10,6 +10,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import pages.RegistrationPage;
 
 
@@ -17,6 +18,7 @@ public class TestBase {
     public RegistrationPage registrationPage;
     private static final WebConfig webConfig = ConfigReader.Instance.read();
 
+    @DisplayName("Открываем страницу https://demoqa.com")
     @BeforeAll
     static void beforeAll() {
         ProjectConfiguration projectConfiguration = new ProjectConfiguration(webConfig);

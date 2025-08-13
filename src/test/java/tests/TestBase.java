@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import helpers.WebAttach;
 import io.qameta.allure.Attachment;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -30,7 +31,7 @@ public class TestBase {
 
     }
 
-    @Attachment
+    @AfterEach
     void addAttachments() {
         WebAttach.screenshotAs("Last screenshot");
         WebAttach.pageSource();

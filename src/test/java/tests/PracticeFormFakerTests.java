@@ -13,11 +13,11 @@ import static data.TestData.*;
 
 @Epic("Demoqa")
 @Feature("Header")
-@Story("Регестрация")
+@Story("Форма регестрация")
 @Owner("medina")
 @Severity(SeverityLevel.NORMAL)
 
-@DisplayName("Форма регистрации — тесты")
+@DisplayName("Форма регистрации студента")
 public class PracticeFormFakerTests extends TestBase {
 
     private RegistrationPage registrationPage;
@@ -32,9 +32,12 @@ public class PracticeFormFakerTests extends TestBase {
         checkResultRegistration = new CheckResultRegistrationComponent();
     }
 
-    @DisplayName("Регистрация с заполнением всех полей")
-    @Tag("Web")
     @Test
+    @Tag("Web")
+    @Story("Позитивный тест")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Регистрация с заполнением всех полей и проверка")
+
     void fillFullPracticeFormTest() {
 
         registrationPage.deleteElement()
@@ -53,21 +56,24 @@ public class PracticeFormFakerTests extends TestBase {
                 .setSubmit();
 
         checkResultRegistration
-                .checkResult(checkName, testData.fullName)
-                .checkResult(checkEmail, testData.email)
-                .checkResult(checkGender, testData.gender)
-                .checkResult(checkMobile, testData.phone)
-                .checkResult(checkDateOfBirth, testData.dateOfBirth)
-                .checkResult(checkSubjects, testData.subject)
-                .checkResult(checkHobbies, testData.hobby)
-                .checkResult(checkPicture, testData.img)
-                .checkResult(checkAddress, testData.address)
-                .checkResult(checkStateAndCity, testData.stateAndCity);
+                .checkResultFullName(checkName, testData.fullName)
+                .checkResultEmail(checkEmail, testData.email)
+                .checkResultGender(checkGender, testData.gender)
+                .checkResultMobile(checkMobile, testData.phone)
+                .checkResultDateOfBirth(checkDateOfBirth, testData.dateOfBirth)
+                .checkResultSubjects(checkSubjects, testData.subject)
+                .checkResultHobbies(checkHobbies, testData.hobby)
+                .checkResultPicture(checkPicture, testData.img)
+                .checkResultAddress(checkAddress, testData.address)
+                .checkResultStateAndCity(checkStateAndCity, testData.stateAndCity);
     }
 
-    @DisplayName("Регистрация с заполнением обязательных полей")
-    @Tag("Web")
     @Test
+    @Tag("Web")
+    @Story("Позитивный тест")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Регистрация с заполнением обязательных полей и проверка")
+
     void fillMinimumPracticeFormTest() {
         registrationPage.deleteElement()
                 .setFirstName(testData.firstName)
@@ -76,15 +82,19 @@ public class PracticeFormFakerTests extends TestBase {
                 .setNumber(testData.phone)
                 .setSubmit();
 
-        checkResultRegistration.checkResult(checkName, testData.fullName)
-                .checkResult(checkGender, testData.gender)
-                .checkResult(checkMobile, testData.phone)
-                ;
+        checkResultRegistration
+                .checkResultFullName(checkName, testData.fullName)
+                .checkResultGender(checkGender, testData.gender)
+                .checkResultMobile(checkMobile, testData.phone)
+        ;
     }
 
-    @DisplayName("Попытка регистрации с пустыми полями")
-    @Tag("Web")
     @Test
+    @Tag("NEGATIVE")
+    @Story("Негативный тест")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("Попытка регистрации с пустыми обязательными полями")
+
     void fillPracticeFormNegTest() {
         registrationPage.deleteElement()
                 .setFirstName("")

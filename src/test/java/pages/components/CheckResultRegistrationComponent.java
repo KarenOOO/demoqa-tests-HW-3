@@ -13,8 +13,80 @@ public class CheckResultRegistrationComponent {
     private final SelenideElement checkStudentRegistration = $(".table-responsive"),
             checkUserForm = $("#userForm");
 
-    @Step("Проверка заполненных полей")
-    public CheckResultRegistrationComponent checkResult(String key, String value) {
+    @Step("Проверка введенного имени и фамилия")
+    public CheckResultRegistrationComponent checkResultFullName(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка введенной почты")
+    public CheckResultRegistrationComponent checkResultEmail(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка выбранного пола")
+    public CheckResultRegistrationComponent checkResultGender(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка введенного номера телефона")
+    public CheckResultRegistrationComponent checkResultMobile(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка введенной даты рождения")
+    public CheckResultRegistrationComponent checkResultDateOfBirth(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка выбранного предмета")
+    public CheckResultRegistrationComponent checkResultSubjects(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка выбранного хобби")
+    public CheckResultRegistrationComponent checkResultHobbies(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка загруженной картинки")
+    public CheckResultRegistrationComponent checkResultPicture(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка введенного адреса")
+    public CheckResultRegistrationComponent checkResultAddress(String key, String value) {
+        checkStudentRegistration.$(byText(key)).parent()
+                .shouldHave(text(value));
+
+        return this;
+    }
+
+    @Step("Проверка выбранного штата и города")
+    public CheckResultRegistrationComponent checkResultStateAndCity(String key, String value) {
         checkStudentRegistration.$(byText(key)).parent()
                 .shouldHave(text(value));
 

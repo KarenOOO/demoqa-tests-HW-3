@@ -38,7 +38,8 @@ public class PracticeFormFakerTests extends TestBase {
     @Test
     void fillFullPracticeFormTest() {
 
-        registrationPage.setFirstName(testData.firstName)
+        registrationPage.deleteElement()
+                .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setEmail(testData.email)
                 .setGender(testData.gender)
@@ -52,7 +53,8 @@ public class PracticeFormFakerTests extends TestBase {
                 .setSelectCity(testData.city)
                 .setSubmit();
 
-        checkResultRegistration.checkResult(checkName, testData.fullName)
+        checkResultRegistration
+                .checkResult(checkName, testData.fullName)
                 .checkResult(checkEmail, testData.email)
                 .checkResult(checkGender, testData.gender)
                 .checkResult(checkMobile, testData.phone)
@@ -68,7 +70,7 @@ public class PracticeFormFakerTests extends TestBase {
     @Tag("Web")
     @Test
     void fillMinimumPracticeFormTest() {
-        registrationPage
+        registrationPage.deleteElement()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)
                 .setGender(testData.gender)
@@ -85,7 +87,7 @@ public class PracticeFormFakerTests extends TestBase {
     @Tag("Web")
     @Test
     void fillPracticeFormNegTest() {
-        registrationPage
+        registrationPage.deleteElement()
                 .setFirstName("")
                 .setLastName("")
                 .setEmail("1234")

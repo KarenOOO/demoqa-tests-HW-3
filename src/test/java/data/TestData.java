@@ -1,7 +1,6 @@
 package data;
 
 import utils.RandomUtils;
-
 import java.time.LocalDate;
 
 public class TestData {

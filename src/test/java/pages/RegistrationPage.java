@@ -31,11 +31,16 @@ public class RegistrationPage {
     @Step("Открываем страницу регистрации")
     public static RegistrationPage openPage() {
         open("automation-practice-form");
-//        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-       executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
 
         return new RegistrationPage();
+    }
+
+    @Step("Удаляем банеры на странице")
+    public RegistrationPage deleteElement() {
+    executeJavaScript("$('#fixedban').remove()");
+    executeJavaScript("$('footer').remove()");
+
+        return this;
     }
 
     @Step("Заполняем поле имя")

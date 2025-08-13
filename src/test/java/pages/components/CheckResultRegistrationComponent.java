@@ -21,6 +21,7 @@ public class CheckResultRegistrationComponent {
         return this;
     }
 
+    @Step("Проверка валидации обязательных полей")
     public void checkValidation() {
         checkUserForm.shouldHave(cssClass("was-validated"));
     }

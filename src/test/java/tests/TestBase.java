@@ -6,7 +6,6 @@ import config.ConfigReader;
 import config.ProjectConfiguration;
 import config.WebConfig;
 import helpers.WebAttach;
-import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -26,7 +25,6 @@ public class TestBase {
     }
 
     @BeforeEach
-    @DisplayName("Открываем страницу")
     void setUpEachTest() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }

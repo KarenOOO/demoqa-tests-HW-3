@@ -5,6 +5,7 @@ import java.time.LocalDate;
 
 public class TestData {
 
+    public static String PracticeForm = "Practice Form";
     public static String checkName = "Student Name";
     public static String checkEmail = "Student Email";
     public static String checkGender = "Gender";

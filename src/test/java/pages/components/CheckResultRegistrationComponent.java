@@ -11,7 +11,15 @@ public class CheckResultRegistrationComponent {
 
 
     private final SelenideElement checkStudentRegistration = $(".table-responsive"),
-            checkUserForm = $("#userForm");
+            checkUserForm = $("#userForm"),
+            checkPracticeForm = $(".practice-form-wrapper");
+
+    @Step("Проверка заголовка формы регистрации")
+    public CheckResultRegistrationComponent checkMainPage(String value) {
+        checkPracticeForm.shouldHave(text(value));
+
+        return this;
+    }
 
     @Step("Проверка введенного имени и фамилия")
     public CheckResultRegistrationComponent checkResultFullName(String key, String value) {

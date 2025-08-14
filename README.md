@@ -110,15 +110,10 @@
 ### Команда для запуска из терминала
 Локальный запуск
 ```bash
-gradle clean UseTech
+gradle clean regress_test 
 ```
-Запуск с параметрами:
 ```bash  
--Dbrowser=chrome -DbrowserSize=1920x1080 -DbrowserVersion=128.0
-```
-Удаленный запуск через Jenkins:
-```bash  
-clean UseTech
+clean regress_test
 -Dbrowser="${BROWSER}"
 -DbrowserSize="${BROWSER_SIZE}"
 -DbrowserVersion="${BROWSER_VERSION}"

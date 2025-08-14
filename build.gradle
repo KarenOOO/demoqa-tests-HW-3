@@ -68,3 +68,7 @@ task negative_test(type: Test) {
         includeTags("NEGATIVE")
     }
 }
+
+task regress_test {
+    dependsOn web_test, negative_test
+}

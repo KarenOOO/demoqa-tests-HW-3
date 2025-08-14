@@ -1,5 +1,5 @@
 
-<a href="https://bivgroup.ru/ "> <img src="media/bivlogo.png" width="200" height="200"> 
+<a href="https://bivgroup.ru/ "> <img src="media/logo/demoqaLogo.png" width="200" height="200"> 
 <h1 >Проект по автоматизации тестирования для компании <a href="https://demoqa.com/ "> DEMOQA </a></h1> 
 
 ## ☑️ Содержание:

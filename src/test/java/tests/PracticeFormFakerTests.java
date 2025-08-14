@@ -28,7 +28,7 @@ public class PracticeFormFakerTests extends TestBase {
     public void setUp() {
         registrationPage = RegistrationPage.openPage();
         testData = new TestData();
-        checkResultRegistration = new CheckResultRegistrationComponent();
+        checkResultRegistration = CheckResultRegistrationComponent.checkMainPage(PracticeForm);
     }
 
     @Test
@@ -39,7 +39,7 @@ public class PracticeFormFakerTests extends TestBase {
 
     void fillFullPracticeFormTest() {
 
-        checkResultRegistration.checkMainPage(PracticeForm);
+//        checkResultRegistration.checkMainPage(PracticeForm);
 
         registrationPage.deleteElement()
                 .setFirstName(testData.firstName)

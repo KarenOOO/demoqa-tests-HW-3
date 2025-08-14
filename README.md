@@ -136,7 +136,7 @@ ${TASK}
 <img title="Allure Overview Dashboard" src="media/reports/allurReport3.png" width="850">  
 </p>
 <p align="center">  
-<img title="Allure Overview Dashboard" src="media/reports/allur4.png" width="850">  
+<img title="Allure Overview Dashboard" src="media/reports/allurReport4.png" width="850">  
 </p>
 ### ☑️ График
 <p align="center">  

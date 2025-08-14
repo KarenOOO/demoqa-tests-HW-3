@@ -95,10 +95,6 @@
 ## [<img src="media/logo/Jenkins.svg" width="40" height="40" alt="Jenkins"> Запуск тестов в Jenkins](https://jenkins.autotests.cloud/job/UI-tests-Diplom/) 
 
 
-<p align="center">  
-<img src="media/reports/jenkinsNew.png" alt="Jenkins" width="950"/></>  
-</p>
-
 
 ### ☑️ Параметры сборки в Jenkins:
 

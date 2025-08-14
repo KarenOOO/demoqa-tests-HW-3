@@ -1,6 +1,6 @@
 
 <a href="https://bivgroup.ru/ "> <img src="media/bivlogo.png" width="200" height="200"> 
-<h1 >Проект по автоматизации тестирования для компании <a href="https://bivgroup.ru/ "> BIV </a></h1> 
+<h1 >Проект по автоматизации тестирования для компании <a href="https://demoqa.com/ "> DEMOQA </a></h1> 
 
 ## ☑️ Содержание:
 
@@ -113,7 +113,8 @@
 gradle clean regress_test 
 ```
 ```bash  
-clean regress_test
+clean 
+${TASK}
 -Dbrowser="${BROWSER}"
 -DbrowserSize="${BROWSER_SIZE}"
 -DbrowserVersion="${BROWSER_VERSION}"
@@ -153,13 +154,3 @@ ____
 
 ____
 ## <img src="media/icons/Selenoid.png" width="40" height="40" alt="Selenoid"> Selenoid
-
-###  ☑️ Примеры видео выполнения тестов на Selenoid
-____
-<p align="center">
-  <img src="media/video1.gif" alt="Demo" width="500">
-</p>
-
-<p align="center">
-  <img src="media/video2.gif" alt="Demo" width="500">
-</p>

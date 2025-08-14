@@ -8,7 +8,6 @@ import java.util.*;
 public class RandomUtils {
 
     private static final Faker faker = new Faker();
-
     private static final String[] img = {"FileForTests.jpg", "dog.jpg", "cat.jpg"};
     private static final String[] gender = {"Male", "Female", "Other"};
     private static final String[] subjects = {"Maths", "Economics", "Arts"};

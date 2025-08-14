@@ -13,8 +13,8 @@ import static data.TestData.*;
 
 @Epic("Demoqa")
 @Feature("Header")
-@Story("Форма регестрация")
-@Owner("medina")
+@Story("Regress")
+@Owner("Karen")
 @Severity(SeverityLevel.NORMAL)
 
 @DisplayName("Форма регистрации студента")

@@ -29,7 +29,6 @@ public class TestBase {
     @DisplayName("Открываем страницу")
     void setUpEachTest() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        registrationPage = RegistrationPage.openPage();
     }
 
     @AfterEach

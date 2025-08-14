@@ -24,6 +24,13 @@ public class PracticeFormFakerTests extends TestBase {
     private CheckResultRegistrationComponent checkResultRegistration;
     private TestData testData;
 
+    @BeforeEach
+    public void setUp() {
+        registrationPage = RegistrationPage.openPage();
+        testData = new TestData();
+        checkResultRegistration = new CheckResultRegistrationComponent();
+    }
+
     @Test
     @Tag("Web")
     @Story("Позитивный тест")

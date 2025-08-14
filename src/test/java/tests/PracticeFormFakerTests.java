@@ -25,6 +25,7 @@ public class PracticeFormFakerTests extends TestBase {
     private TestData testData;
 
     @BeforeEach
+    @DisplayName("Открываем страницу и проверям заголовок")
     public void setUp() {
         registrationPage = RegistrationPage.openPage();
         testData = new TestData();

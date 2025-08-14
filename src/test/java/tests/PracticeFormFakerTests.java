@@ -40,8 +40,6 @@ public class PracticeFormFakerTests extends TestBase {
 
     void fillFullPracticeFormTest() {
 
-//        checkResultRegistration.checkMainPage(PracticeForm);
-
         registrationPage.deleteElement()
                 .setFirstName(testData.firstName)
                 .setLastName(testData.lastName)

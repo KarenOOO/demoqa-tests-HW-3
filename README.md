@@ -153,3 +153,14 @@ ____
 ### После завершения сборки, бот, созданный в Telegram, автоматически обрабатывает и отправляет сообщение с результатом
 
 ____
+## <img src="media/icons/Selenoid.png" width="40" height="40" alt="Selenoid"> Selenoid
+
+###  ☑️ Примеры видео выполнения тестов на Selenoid
+____
+<p align="center">
+  <img src="media/reports/video1.gif" alt="Demo" width="500">
+</p>
+
+<p align="center">
+  <img src="media/reports/video2.gif" alt="Demo" width="500">
+</p>

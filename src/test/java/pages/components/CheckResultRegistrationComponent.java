@@ -22,7 +22,7 @@ public class CheckResultRegistrationComponent {
         return new CheckResultRegistrationComponent();
     }
 
-    @Step("Проверка введнных данных")
+    @Step("Проверка, что поле [{key}] содержит значение [{value}]")
     public CheckResultRegistrationComponent checkResult(String key, String value) {
         checkStudentRegistration.$(byText(key)).parent()
                 .shouldHave(text(value));

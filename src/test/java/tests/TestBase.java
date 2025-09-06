@@ -14,7 +14,7 @@ import pages.RegistrationPage;
 
 
 public class TestBase {
-    public RegistrationPage registrationPage;
+
     private static final WebConfig webConfig = ConfigReader.Instance.read();
 
     @BeforeAll

@@ -22,7 +22,7 @@ public class CheckResultRegistrationComponent {
         return new CheckResultRegistrationComponent();
     }
 
-    @Step("Проверка введенного имени и фамилия")
+    @Step("Проверка введнных данных")
     public CheckResultRegistrationComponent checkResult(String key, String value) {
         checkStudentRegistration.$(byText(key)).parent()
                 .shouldHave(text(value));
